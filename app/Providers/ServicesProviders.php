@@ -1,14 +1,26 @@
 <?php
 
 namespace App\Providers;
+use App\Services\UserServices;
+use App\Services\impl\UserServicesimpl;
 
 use Illuminate\Support\ServiceProvider;
 
 class ServicesProvider extends ServiceProvider
 {
-    /**
-     * Register services.
-     */
+    
+    public array $singletons = [
+
+        UserServices::class => UserServicesimpl::class
+
+    ];
+
+    public function intial(){
+        
+        return[UserServices::class];
+    
+    }
+
     public function register(): void
     {
         //
