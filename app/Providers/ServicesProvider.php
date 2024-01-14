@@ -15,7 +15,7 @@ class ServicesProvider extends ServiceProvider
 
     ];
 
-    public function intial(){
+    public function provides(){
         
         return[UserServices::class];
     
