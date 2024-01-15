@@ -26,5 +26,12 @@ class UserSersTest extends TestCase
         public function testTrue(){
             self::assertTrue(true);
         }
+
+        public function testLogin(){
+
+            $log = $this->aqs->Login( "ulfhah", "uio8787");
+            self::assertTrue($log);
+
+        }
     
 }

@@ -14,9 +14,13 @@ class UserServicesimpl implements UserServices{
     
     public function Login(string $User, string $Password):bool{
 
-       if(!isset($users->[$User])){
-        return false
-       }
+       if(!isset($this->users[$User])){
+            return false;
+       
+        }else{
+            $pass = $this->users[$User];
+            return $pass == $Password;
+        }
 
 
     }
