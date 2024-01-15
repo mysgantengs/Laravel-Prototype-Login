@@ -4,6 +4,6 @@ namespace App\Services;
 
 interface UserServices{
 
-    // function ServicesImpl();
+    function Login(string $User, string $Password):bool;
 
 }
