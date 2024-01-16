@@ -23,9 +23,9 @@ class UserSersTest extends TestCase
 
         }
 
-        public function testTrue(){
-            self::assertTrue(true);
-        }
+        // public function testTrue(){
+        //     self::assertTrue(true);
+        // }
 
         public function testLogin(){
 
@@ -34,4 +34,10 @@ class UserSersTest extends TestCase
 
         }
     
+        public function testLoginFailed(){
+
+            $log = $this->aqs->Login( "ulfhah", "null");
+            self::assertFalse($log);
+
+        }
 }
