@@ -9,7 +9,12 @@ class LoginController extends Controller
 {
     public function Login():Response{
 
-        return response()->view("Users.Login");
+        return response()->view("Users.Login", [
+
+            "Title" => "Login Page",
+            "LogsTitle" => "Login"
+        
+        ]);
 
     }
 

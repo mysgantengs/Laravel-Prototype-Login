@@ -8,13 +8,12 @@ use Tests\TestCase;
 
 class LoginControllerTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     */
-    public function test_example(): void
-    {
-        $response = $this->get('/');
 
-        $response->assertStatus(200);
+    public function test_example()
+    {
+        $this->get('/login')
+        ->assertSeeText("Login")
+        ->assertSeeText("Username")
+        ->assertSeeText("Password");
     }
 }

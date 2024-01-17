@@ -3,27 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>logins</title>
+    <title>{{$Title}}</title>
+    <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
 <div class="container col-xl-10 col-xxl-8 px-4 py-5">
         <div class="row" >
             <div class="col-md-4 mx-auto">
-
-          <!-- {{@if($error)}}
+           
+            @if(isset($error))     
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
-             
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div> -->
+             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
             
 
 
-                <h1 class="text-center">Login</h1><br>
-
+                <h1 class="text-center">{{$LogsTitle}}</h1><br>
+            
                 <form class="p-4 p-md-5 border rounded-3 bg-light" method="post" action="/Login">
                 <!-- <form class="p-4 p-md-5 border rounded-3 bg-light" method="post" action="/Dashboards"> -->
          <div class="mb-3">
-            <label for="id">Id</label>
+            <label for="id">Username</label>
                 <input type="text" class="form-control" name="id" id="id" value="<?= $_POST["id"] ?? ''?>">
             </div>
             <div class="mb-3">
@@ -37,5 +38,6 @@
            </div>
         </div>
     </div>
+    <script src="/js/boostrap.js"></script>
 </body>
 </html>
