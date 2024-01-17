@@ -19,10 +19,12 @@
             
 
 
-                <h1 class="text-center">{{$LogsTitle}}</h1><br>
-            
+               
+               
                 <form class="p-4 p-md-5 border rounded-3 bg-light" method="post" action="/Login">
+                <h1 class="text-center">{{$LogsTitle}}</h1><br>
                 <!-- <form class="p-4 p-md-5 border rounded-3 bg-light" method="post" action="/Dashboards"> -->
+                @csrf
          <div class="mb-3">
             <label for="id">Username</label>
                 <input type="text" class="form-control" name="id" id="id" value="<?= $_POST["id"] ?? ''?>">
@@ -32,7 +34,7 @@
             <input type="password" class="form-control" name="Password" id="Password">
     </div>
             <button type="submit" class="w-100 btn btn-primary">Login</button><br><br>
-            <a href="/Users/UpdatePassword" class="w-100 btn btn-warning">Forgot Password</a>
+            <!-- <a href="/Users/UpdatePassword" class="w-100 btn btn-warning">Forgot Password</a> -->
     </form>
 
            </div>
