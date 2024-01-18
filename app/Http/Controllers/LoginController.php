@@ -11,11 +11,11 @@ class LoginController extends Controller
 {
 
 
-    private UserServices $Userservices;
+    private UserServices $Userser;
 
-    public function __construct($Userservices){
+    public function __construct($Userser){
 
-        $this->Userservices = $Userservices;
+        $this->Userser = $Userser;
 
     }
 
@@ -35,7 +35,7 @@ class LoginController extends Controller
         $Username = $res->input("Username");
         $Password = $res->input("Passwors");
 
-        if(empty($Username) OR empty($Password)){
+        if(empty($Username) || empty($Password)){
             return response()->view("Users.Login", [
 
                 "Title" => "Login Page",
@@ -44,7 +44,7 @@ class LoginController extends Controller
 
         ]);
 
-        if($this->Userservices->Login($Username, $Password)){
+        if($this->Userser->Login($Username, $Password)){
             $req->session()->put("Username", $Username);
             return redirect("/");
         }else{

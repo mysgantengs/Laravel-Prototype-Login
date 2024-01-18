@@ -7,7 +7,7 @@ use App\Services\impl\UserServicesimpl;
 use Illuminate\Support\ServiceProvider;
 
 class ServicesProvider extends ServiceProvider 
-// implements DeferrableProvider
+//implements DeferrableProvider
 {
     
     public array $singletons = [

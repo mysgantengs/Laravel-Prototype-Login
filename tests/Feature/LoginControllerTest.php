@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature;
+// namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -15,5 +15,14 @@ class LoginControllerTest extends TestCase
         ->assertSeeText("Login")
         ->assertSeeText("Username")
         ->assertSeeText("Password");
+    }
+
+    public function testLoginSuccess(){
+        $this->post('/login',[
+            "Username" => "ulfhah",
+            "Password" => "uio8787"
+        ])
+            ->assertRedirect("/")
+            ->assertSessionHas("ulfhah", "uio8787");
     }
 }
