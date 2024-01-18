@@ -18,16 +18,13 @@
             @endif
             
 
-
-               
-               
-                <form class="p-4 p-md-5 border rounded-3 bg-light" method="post" action="/Login">
+         <form class="p-4 p-md-5 border rounded-3 bg-light" method="post" action="/login">
                 <h1 class="text-center">{{$LogsTitle}}</h1><br>
                 <!-- <form class="p-4 p-md-5 border rounded-3 bg-light" method="post" action="/Dashboards"> -->
                 @csrf
          <div class="mb-3">
-            <label for="id">Username</label>
-                <input type="text" class="form-control" name="id" id="id" value="<?= $_POST["id"] ?? ''?>">
+            <label for="Username">Username</label>
+                <input type="text" class="form-control" name="Username" id="Username">
             </div>
             <div class="mb-3">
                 <label for="Password">Password</label>

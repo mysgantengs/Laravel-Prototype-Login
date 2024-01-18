@@ -9,7 +9,7 @@ use Tests\TestCase;
 class LoginControllerTest extends TestCase
 {
 
-    public function test_example()
+    public function testLoginPage()
     {
         $this->get('/login')
         ->assertSeeText("Login")
