@@ -5,15 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Services\UserServices;
+use App\Providers\ServicesProvider;
 use Illuminate\Http\RedirectResponse;
 
 class LoginController extends Controller
 {
 
 
-    private UserServices $Userser;
+    public UserServices $Userser;
 
-    public function __construct($Userser){
+    public function __construct(UserServices $Userser){
 
         $this->Userser = $Userser;
 
@@ -51,7 +52,8 @@ class LoginController extends Controller
             return response()->view("Users.Login", [
 
                 "Title" => "Login Page",
-                "error" => "User or Password is Wrong!"
+                "error" => "User or Password is Wrong!",
+                "LogsTitle" => "Login"
 
 
         ]);
