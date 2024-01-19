@@ -23,8 +23,14 @@ class LoginControllerTest extends TestCase
         $this->post('/login',[
             "Username" => "ulfhah",
             "Password" => "uio8787"
-        ])
-            ->assertRedirect("/")
-            ->assertSessionHas("ulfhah", "uio8787");
+        ])->assertRedirect("/okes")
+            ->assertSessionHas("ulfhah");
+    }
+
+    public function testLoginFailed(){
+        $this->post('/login',[
+            "Username" => "ulfhah",
+            "Password" => "TidakBenar"
+        ])->assertSeeText("User or Password is Wrong!");
     }
 }

@@ -17,8 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/Test', function () {
-    return ('Hello Elina');
+Route::get('/okes', function () {
+    return view('ok');
 });
 
 Route::controller(\App\Http\Controllers\LoginController::class)->group(function () {

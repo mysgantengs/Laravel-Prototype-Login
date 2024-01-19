@@ -46,14 +46,14 @@ class LoginController extends Controller
         ]);
 
         if($this->Userser->Login($Username, $Password)){
-            $req->session()->put("Username", $Username);
+            $res->session()->put("Username", $Username);
             return redirect("/");
         }else{
             return response()->view("Users.Login", [
 
                 "Title" => "Login Page",
                 "error" => "User or Password is Wrong!",
-                "LogsTitle" => "Login"
+       
 
 
         ]);
