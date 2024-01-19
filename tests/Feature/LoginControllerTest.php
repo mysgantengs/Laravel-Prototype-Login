@@ -31,6 +31,10 @@ class LoginControllerTest extends TestCase
         $this->post('/login',[
             "Username" => "ulfhah",
             "Password" => "TidakBenar"
-        ])->assertSeeText("User or Password is Wrong!");
+        ])->assertSeeText("User or Password  Wrong!")
+            ->assertSeeText("Login")
+        ->assertSeeText("Username")
+        ->assertSeeText("Password");
+            
     }
 }

@@ -52,7 +52,7 @@ class LoginController extends Controller
             return response()->view("Users.Login", [
 
                 "Title" => "Login Page",
-                "error" => "User or Password is Wrong!",
+                "error" => "User or Password  Wrong!",
        
 
 
