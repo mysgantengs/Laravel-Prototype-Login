@@ -12,7 +12,7 @@ class LoginController extends Controller
 {
 
 
-    public UserServices $Userser;
+    private UserServices $Userser;
 
     public function __construct(UserServices $Userser){
 
@@ -24,17 +24,16 @@ class LoginController extends Controller
 
         return response()->view("Users.Login", [
 
-            "Title" => "Login Page",
-            "LogsTitle" => "Login"
+            "Title" => "Login Page"
         
         ]);
 
     }
 
-    public function ActionLogin(Request $res):Response|RedirectResponse{
+    public function ActionLogin(Request $res): Response|RedirectResponse{
 
         $Username = $res->input("Username");
-        $Password = $res->input("Passwors");
+        $Password = $res->input("Password");
 
         if(empty($Username) || empty($Password)){
             return response()->view("Users.Login", [
@@ -44,15 +43,16 @@ class LoginController extends Controller
 
 
         ]);
+    }
 
         if($this->Userser->Login($Username, $Password)){
             $res->session()->put("Username", $Username);
-            return redirect("/");
-        }else{
+            return redirect("/okes");
+        }
             return response()->view("Users.Login", [
 
                 "Title" => "Login Page",
-                "error" => "User or Password  Wrong!",
+                "error" => "User and Password is Wrong!"
        
 
 
@@ -61,11 +61,12 @@ class LoginController extends Controller
         }
     
 
-    }
-}
+    
+
 
     
     public function Logout(){
         
     }
+
 }

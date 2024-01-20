@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{$Title}}</title>
     <link rel="stylesheet" href="/bootstrapsI/css/bootstrap.css">
+    <style>
+        body{
+
+            background-color : red;
+
+        }
+    </style>
 </head>
 <body>
 <div class="container col-xl-10 col-xxl-8 px-4 py-5">
