@@ -26,9 +26,9 @@
             @endif
             
 
-            <h1 class="text-center">Login</h1><br>
+           
          <form class="p-4 p-md-5 border rounded-3 bg-light" method="post" action="/login">
-                
+         <h1 class="text-center">Login</h1><br><br>     
                 <!-- <form class="p-4 p-md-5 border rounded-3 bg-light" method="post" action="/Dashboards"> -->
                 @csrf
          <div class="mb-3">

@@ -44,10 +44,10 @@ class LoginControllerTest extends TestCase
     }
 
     public function testLogout(){
-        $this->WithSession([
+        $this->withSession([
             "Username" => "ulfhah"
         ])->post("/logout")
-            ->assertRedirect("okes")
+            ->assertRedirect("/okes")
             ->assertSessionMissing("Username");
     }
 }
