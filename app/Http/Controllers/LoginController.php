@@ -61,12 +61,9 @@ class LoginController extends Controller
         }
     
 
-    
-
-
-    
-    public function Logout(){
-        
+    public function Logout(Request $reqs){
+        $reqs->session->forget("Username");
+        return("/Login");
     }
 
 }
