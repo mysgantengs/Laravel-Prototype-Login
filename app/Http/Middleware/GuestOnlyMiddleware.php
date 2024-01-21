@@ -15,6 +15,11 @@ class GuestOnlyMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        return $next($request);
+        if($request->session()->exits("Username")){
+            return redirect("/okes");
+        }else{
+            return $next($request);
+        }
+        
     }
 }

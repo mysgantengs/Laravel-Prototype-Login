@@ -50,5 +50,12 @@ class LoginControllerTest extends TestCase
             ->assertRedirect("/login")
             ->assertSessionMissing("Username");
     }
+
+    public function testMiddlewarelogin(){
+        $this->withSession([
+            "Username" => "ulfhah"
+        ])->get("/login")
+            ->assertRedirect("/okes");
+    }
 }
     

@@ -22,7 +22,7 @@ Route::get('/okes', function () {
 });
 
 Route::controller(\App\Http\Controllers\LoginController::class)->group(function () {
-    Route::get('/login', 'Login');
-    Route::post('/login', 'ActionLogin');
+    Route::get('/login', 'Login')->middleware([\App\Http\Middleware\GuestOnlyMiddleware::class]);
+    Route::post('/login', 'ActionLogin')->middleware([\App\Http\Middleware\GuestOnlyMiddleware::class]);
     Route::post('/logout', 'Logout');
 });
