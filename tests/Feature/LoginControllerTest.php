@@ -68,6 +68,11 @@ class LoginControllerTest extends TestCase
             ->assertSessionMissing("Username");
     }
 
+    public function testLogoutGuest(){
+        $this->post("/logout")
+            ->assertRedirect("/okes");
+        }
+
   
 }
     
