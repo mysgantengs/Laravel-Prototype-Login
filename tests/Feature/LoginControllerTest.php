@@ -19,12 +19,29 @@ class LoginControllerTest extends TestCase
         ->assertSeeText("Password");
     }
 
+    public function testMiddlewarelogin(){
+        $this->withSession([
+            "Username" => "ulfhah"
+        ])->get("/login")
+            ->assertRedirect("/okes");
+    }
+
     public function testLoginSuccess(){
         $this->post('/login',[
             "Username" => "ulfhah",
             "Password" => "uio8787"
         ])->assertRedirect("/okes")
             ->assertSessionHas("Username", "ulfhah");
+    }
+
+    public function testLoginUserAlReady(){
+        $this->withSession([
+            "Username" => "ulfhah"
+        ])->post('/login',[
+            "Username" => "ulfhah",
+            "Password" => "uio8787"
+        ])->assertRedirect("/okes");
+            
     }
 
     
@@ -51,11 +68,6 @@ class LoginControllerTest extends TestCase
             ->assertSessionMissing("Username");
     }
 
-    public function testMiddlewarelogin(){
-        $this->withSession([
-            "Username" => "ulfhah"
-        ])->get("/login")
-            ->assertRedirect("/okes");
-    }
+  
 }
     
