@@ -13,13 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/okes', function () {
-    return view('ok');
-});
+// Route::get('/okes', function () {
+//     return view('ok');
+// });
+
+
+Route::view('/okes', 'ok');
 
 Route::controller(\App\Http\Controllers\LoginController::class)->group(function () {
     Route::get('/login', 'Login')->middleware([\App\Http\Middleware\GuestOnlyMiddleware::class]);
