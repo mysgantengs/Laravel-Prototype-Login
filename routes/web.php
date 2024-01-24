@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-Route::view('/okes', 'ok');
+Route::get('/okes', [\App\Http\Controllers\HomesPageController::class]);
 
 Route::controller(\App\Http\Controllers\LoginController::class)->group(function () {
     Route::get('/login', 'Login')->middleware([\App\Http\Middleware\GuestOnlyMiddleware::class]);

@@ -11,6 +11,6 @@ class HomeTest extends TestCase
     public function testHomes()
     {
         $this->get('/okes')
-            ->assertStatus("/login");
+            ->assertRedirect('/login');
     }
 }
